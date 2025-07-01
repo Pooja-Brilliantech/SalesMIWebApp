@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="sfdcDao"
+		class="com.fieldmi.daoImpl.SfdcDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="sfdcService"
+		class="com.fieldmi.serviceImpl.SfdcServiceImpl">
+		<property name="sfdcDao" ref="sfdcDao"></property>
+	</bean>
+
+	<bean id="workFlowAuditLogService"
+		class="com.fieldmi.serviceImpl.WorkFlowAuditLogServiceImpl">
+		<property name="workFlowAuditLogDao"
+			ref="workFlowAuditLogDao"></property>
+	</bean>
+	<bean id="workFlowAuditLogDao"
+		class="com.fieldmi.daoImpl.WorkFlowAuditLogDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="fmUserActivityService"
+		class="com.fieldmi.serviceImpl.FMUserActivityServiceImpl">
+		<property name="fmUserActivityDao"
+			ref="fmUserActivityDao"></property>
+	</bean>
+	<bean id="fmUserActivityDao"
+		class="com.fieldmi.daoImpl.FMUserActivityDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="fmWorkflowConfigurationService"
+		class="com.fieldmi.serviceImpl.FMWorkflowConfigurationServiceImpl">
+		<property name="fmWorkflowConfigurationDao"
+			ref="fmWorkflowConfigurationDao"></property>
+	</bean>
+	
+	<bean id="fmWorkflowConfigurationDao"
+		class="com.fieldmi.daoImpl.FMWorkflowConfigurationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="fmSalesMasterDao"
+		class="com.fieldmi.daoImpl.FMSalesMasterDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="fmSalesMasterService"
+		class="com.fieldmi.serviceImpl.FMSalesMasterServiceImpl">
+		<property name="fmSalesMasterDao" ref="fmSalesMasterDao"></property>
+	</bean>
+	
+	<bean id="fmFeatureDao"
+		class="com.fieldmi.daoImpl.FMFeatureDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="fmFeatureService"
+		class="com.fieldmi.serviceImpl.FMFeatureServiceImpl">
+		<property name="fmFeatureDao" ref="fmFeatureDao"></property>
+	</bean>
+
+	<bean id="workFlowTaskStatusService"
+		class="com.fieldmi.serviceImpl.WorkFlowTaskStatusServiceImpl">
+		<property name="workFlowTaskStatusDao"
+			ref="workFlowTaskStatusDao"></property>
+	</bean>
+
+	<bean id="workFlowTaskStatusDao"
+		class="com.fieldmi.daoImpl.WorkFlowTaskStatusDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fmUserServiceDao"
+		class="com.fieldmi.daoImpl.FMUserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="fmUserService"
+		class="com.fieldmi.serviceImpl.FMUserServiceImpl">
+		<property name="fmUserServiceDao" ref="fmUserServiceDao"></property>
+	</bean>
+
+	<bean id="fmCustomerDao"
+		class="com.fieldmi.daoImpl.FMCustomerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="fmCustomerService"
+		class="com.fieldmi.serviceImpl.FMCustomerServiceImpl">
+		<property name="fmCustomerDao" ref="fmCustomerDao"></property>
+	</bean>
+	
+	<bean id="fmProductDao"
+		class="com.fieldmi.daoImpl.FMProductDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="fmProfileDao"
+		class="com.fieldmi.daoImpl.FMProfileDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="fmProductService"
+		class="com.fieldmi.serviceImpl.FMProductServiceImpl">
+		<property name="fmProductDao" ref="fmProductDao"></property>
+	</bean>
+	
+	<bean id="fmProfileService"
+		class="com.fieldmi.serviceImpl.FMProfileServiceImpl">
+		<property name="fmProfileDao" ref="fmProfileDao"></property>
+	</bean>
+	
+
+	<bean id="fmCompanyDao"
+		class="com.fieldmi.daoImpl.FMCompanyDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="fmCompanyService"
+		class="com.fieldmi.serviceImpl.FMCompanyServiceImpl">
+		<property name="fmCompanyDao" ref="fmCompanyDao"></property>
+	</bean>
+	<bean id="fmEmailConfigurationService"
+		class="com.fieldmi.serviceImpl.FMEmailConfigurationServiceImpl">
+	</bean>
+
+
+	<bean id="fmSalesOrgDao"
+		class="com.fieldmi.daoImpl.FMSalesOrgDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="fmSalesOrgService"
+		class="com.fieldmi.serviceImpl.FMSalesOrgServiceImpl">
+		<property name="fmSalesOrgDao" ref="fmSalesOrgDao"></property>
+	</bean>
+
+	<bean id="commonMethods" class="com.fieldmi.utils.CommonMethods">
+	</bean>
+
+	<bean id="fmAssignedTruckDao"
+		class="com.fieldmi.daoImpl.FMAssignedTruckServiceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="fmAssignedTruckService"
+		class="com.fieldmi.serviceImpl.FMAssignedTruckServiceImpl">
+		<property name="fmAssignedTruckDao" ref="fmAssignedTruckDao"></property>
+	</bean>
+	
+	<bean id="businessUnitDao"
+		class="com.fieldmi.daoImpl.BusinessUnitDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="bussinessUnitService"
+		class="com.fieldmi.serviceImpl.BusinessUnitServiceImpl">
+		<property name="businessUnitDao" ref="businessUnitDao"></property>
+	</bean>
+	
+	<bean id="fmLeadDao"
+		class="com.fieldmi.daoImpl.FMLeadDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="fmLeadService"
+		class="com.fieldmi.serviceImpl.FMLeadServiceImpl">
+		<property name="fmLeadDao"
+			ref="fmLeadDao"></property>
+	</bean>
+	<bean id="zoneDao"
+		class="com.fieldmi.daoImpl.ZoneDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="zoneService"
+		class="com.fieldmi.serviceImpl.ZoneServiceImpl">
+		<property name="zoneDao" ref="zoneDao"></property>
+	</bean>
+	<bean id="countryStateDao"
+		class="com.fieldmi.daoImpl.CountryStateDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="countryStateService"
+		class="com.fieldmi.serviceImpl.CountryStateServiceImpl">
+		<property name="countryStateDao" ref="countryStateDao"></property>
+	</bean>
+	
+	<bean id="fmAttendanceDao"
+		class="com.fieldmi.daoImpl.FMAttendanceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fmAttendanceService"
+		class="com.fieldmi.serviceImpl.FMAttendanceServiceImpl">
+		<property name="fmAttendanceDao" ref="fmAttendanceDao"></property>
+	</bean>
+	
+	<bean id="fmEOD_SpecialDao"
+		class="com.fieldmi.daoImpl.FMEOD_SpecialDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fmEOD_SpecialService"
+		class="com.fieldmi.serviceImpl.FMEOD_SpecialServiceImpl">
+		<property name="fmEOD_SpecialDao" ref="fmEOD_SpecialDao"></property>
+	</bean>
+	
+	<bean id="fmExpenseDao"
+		class="com.fieldmi.daoImpl.FMExpenseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fmExpenseService"
+		class="com.fieldmi.serviceImpl.FMExpenseServiceImpl">
+		<property name="fmExpenseDao" ref="fmExpenseDao"></property>
+	</bean>
+	
+	<bean id="journeyTypeDao"
+		class="com.fieldmi.daoImpl.JourneyTypeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="journeyTypeService"
+		class="com.fieldmi.serviceImpl.JourneyTypeServiceImpl">
+		<property name="journeyTypeDao" ref="journeyTypeDao"></property>
+	</bean>
+	
+	<bean id="fmPrimaryOrderDao"
+		class="com.fieldmi.daoImpl.FMPrimaryOrderDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fmPrimaryOrderService"
+		class="com.fieldmi.serviceImpl.FMPrimaryOrderServiceImpl">
+		<property name="fmPrimaryOrderDao" ref="fmPrimaryOrderDao"></property>
+	</bean>
+	
+	<bean id="fmDistributorStockDao"
+		class="com.fieldmi.daoImpl.FMDistributorStockDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fmDistributorStockService"
+		class="com.fieldmi.serviceImpl.FMDistributorStockServiceImpl">
+		<property name="fmDistributorStockDao" ref="fmDistributorStockDao"></property>
+	</bean>
+	<bean id="fmbeatplanDao"
+		class="com.fieldmi.daoImpl.FMBeatPlanDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fmBeatPlanService"
+		class="com.fieldmi.serviceImpl.FMBeatPlanServiceImpl">
+		<property name="fmbeatplanDao" ref="fmbeatplanDao"></property>
+	</bean>
+	<bean id="fmTravelDao"
+		class="com.fieldmi.daoImpl.FMTravelDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fmTravelService"
+		class="com.fieldmi.serviceImpl.FMTravelServiceImpl">
+		<property name="fmTravelDao" ref="fmTravelDao"></property>
+	</bean>
+	
+	<bean id="documentUploadDao"
+		class="com.fieldmi.daoImpl.DocumentUploadDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="documentUploadService"
+		class="com.fieldmi.serviceImpl.DocumentUploadServiceImpl">
+		<property name="documentUploadDao" ref="documentUploadDao"></property>
+	</bean>
+																																				
+	<bean id="fmTargetDao"
+		class="com.fieldmi.daoImpl.FMTargetDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fmTargetService"
+		class="com.fieldmi.serviceImpl.FMTargetServiceImpl">
+		<property name="fmTargetDao" ref="fmTargetDao"></property>
+	</bean>
+	<bean id="fmTaskDao"
+		class="com.fieldmi.daoImpl.FMTaskDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="fmTaskService"
+		class="com.fieldmi.serviceImpl.FMTaskServiceImpl">
+		<property name="fmTaskDao"
+			ref="fmTaskDao"></property>
+	</bean>
+	
+	<bean id="fmInvoiceDao"
+		class="com.fieldmi.daoImpl.FMInvoiceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="fmInvoiceService"
+		class="com.fieldmi.serviceImpl.FMInvoiceServiceImpl">
+		<property name="fmInvoiceDao"
+			ref="fmInvoiceDao"></property>
+	</bean>
+	<bean id="reasonFormDao"
+	class="com.fieldmi.daoImpl.FMReasonFormDaoImpl">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+   <bean id="reasonFormService"
+   class="com.fieldmi.serviceImpl.FMReasonFormServiceImpl">
+   <property name="reasonFormDao" ref="reasonFormDao"></property>
+   </bean>
+	
+	<bean id="visitReasonDao"
+	class="com.fieldmi.daoImpl.FMVisitReasonDaoImpl">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+   <bean id="visitReasonService"
+   class="com.fieldmi.serviceImpl.FMVisitReasonServiceImpl">
+   <property name="visitReasonDao" ref="visitReasonDao"></property>
+   </bean>
+	
+</beans>
