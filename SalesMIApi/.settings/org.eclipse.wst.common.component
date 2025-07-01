@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+                    
+    
+    
+    
+    <wb-module deploy-name="SalesMIApi-3.0.0">
+                                        
+        
+        
+        
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+                                        
+        
+        
+        
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+                                        
+        
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+                                        
+        
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
+                                
+        
+        
+        <dependent-module archiveName="SalesMIDBModel-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/SalesMIDBModel/SalesMIDBModel">
+                                                
+            
+            
+            <dependency-type>uses</dependency-type>
+                                            
+        
+        
+        </dependent-module>
+                                
+        
+        
+        <dependent-module archiveName="SalesMISapInteg-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/SalesMISapInteg/SalesMISapInteg">
+                                                
+            
+            
+            <dependency-type>uses</dependency-type>
+                                            
+        
+        
+        </dependent-module>
+                                
+        
+        
+        <dependent-module archiveName="SalesMIWSModel-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/SalesMIWSModel/SalesMIWSModel">
+                                                
+            
+            
+            <dependency-type>uses</dependency-type>
+                                            
+        
+        
+        </dependent-module>
+                                
+        
+        
+        <dependent-module archiveName="SalesMIDBConnector-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/SalesMIDBConnector/SalesMIDBConnector">
+                                                
+            
+            
+            <dependency-type>uses</dependency-type>
+                                            
+        
+        
+        </dependent-module>
+                                
+        
+        
+        <dependent-module archiveName="SalesMISfdcInteg-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/SalesMISfdcInteg/SalesMISfdcInteg">
+                                                
+            
+            
+            <dependency-type>uses</dependency-type>
+                                            
+        
+        
+        </dependent-module>
+                                        
+        
+        
+        
+        <property name="context-root" value="SalesMIApi"/>
+                                        
+        
+        
+        
+        <property name="java-output-path" value="/SalesMIApi/target/classes"/>
+                                    
+    
+    
+    
+    </wb-module>
+                
+
+
+
+</project-modules>
